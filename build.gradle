@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id "me.champeau.gradle.jmh" version "0.5.0"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'me.champeau.gradle.jmh'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.openjdk.jmh:jmh-core:0.9'
+
+    jmh 'commons-io:commons-io:2.4'
+    jmh 'org.openjdk.jmh:jmh-core:0.9'
+    jmh 'org.openjdk.jmh:jmh-generator-annprocess:0.9'
+}
+
